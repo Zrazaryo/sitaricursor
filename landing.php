@@ -5,6 +5,26 @@ if (file_exists($baseDir . '/includes/functions.php')) {
     require_once $baseDir . '/includes/functions.php';
 }
 
+// Fallback: jika functions.php gagal diload di Vercel dan fungsi belum ada,
+// definisikan versi sederhana agar tidak fatal error.
+if (!function_exists('init_multi_session')) {
+    function init_multi_session() {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+    }
+}
+if (!function_exists('get_tab_id')) {
+    function get_tab_id() {
+        return 0;
+    }
+}
+if (!function_exists('add_tab_param')) {
+    function add_tab_param($url) {
+        return $url;
+    }
+}
+
 // Inisialisasi session dengan dukungan multi-tab
 init_multi_session();
 
