@@ -1,0 +1,54 @@
+{
+  "//": "Konfigurasi deployment ke Vercel untuk aplikasi PHP ini menggunakan runtime komunitas vercel-php.",
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/index.php",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/landing.php",
+      "dest": "/api/landing.php"
+    },
+    {
+      "src": "/auth/login_superadmin.php",
+      "dest": "/api/login_superadmin.php"
+    },
+    {
+      "src": "/auth/login_admin.php",
+      "dest": "/api/login_admin.php"
+    },
+    {
+      "src": "/auth/login_staff.php",
+      "dest": "/api/login_staff.php"
+    },
+    {
+      "src": "/auth/login.php",
+      "dest": "/api/login.php"
+    },
+    {
+      "src": "/dashboard.php",
+      "dest": "/api/dashboard.php"
+    },
+    {
+      "src": "/staff/dashboard.php",
+      "dest": "/api/staff_dashboard.php"
+    },
+    {
+      "src": "/superadmin/dashboard.php",
+      "dest": "/api/superadmin_dashboard.php"
+    },
+    {
+      "src": "/logout.php",
+      "dest": "/api/logout.php"
+    }
+  ]
+}
