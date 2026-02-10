@@ -1,5 +1,4 @@
 {
-  "//": "Konfigurasi deployment ke Vercel untuk aplikasi PHP ini menggunakan runtime komunitas vercel-php.",
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.7.3"
