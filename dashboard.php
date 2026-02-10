@@ -1,11 +1,12 @@
 <?php
-// Load functions first untuk init_multi_session
-require_once 'includes/functions.php';
+// Load functions first untuk init_multi_session (gunakan path absolut relatif ke file ini)
+$baseDir = __DIR__;
+require_once $baseDir . '/includes/functions.php';
 
 // Inisialisasi session dengan dukungan multi-tab
 init_multi_session();
 
-require_once 'config/database.php';
+require_once $baseDir . '/config/database.php';
 
 // Cek login dan role admin
 require_admin();

@@ -1,7 +1,8 @@
 <?php
-// Load functions untuk get_tab_id
-if (file_exists('includes/functions.php')) {
-    require_once 'includes/functions.php';
+// Load functions untuk get_tab_id (gunakan path absolut relatif ke file ini)
+$baseDir = __DIR__;
+if (file_exists($baseDir . '/includes/functions.php')) {
+    require_once $baseDir . '/includes/functions.php';
 }
 
 // Redirect ke halaman landing untuk memilih jenis login dengan mempertahankan parameter tab

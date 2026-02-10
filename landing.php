@@ -1,7 +1,8 @@
 <?php
-// Load functions first untuk init_multi_session
-if (file_exists('includes/functions.php')) {
-    require_once 'includes/functions.php';
+// Load functions first untuk init_multi_session (path dibuat absolut dari folder file ini)
+$baseDir = __DIR__;
+if (file_exists($baseDir . '/includes/functions.php')) {
+    require_once $baseDir . '/includes/functions.php';
 }
 
 // Inisialisasi session dengan dukungan multi-tab
@@ -34,9 +35,9 @@ if (isset($_SESSION['user_id']) && !$force_login) {
 
 // Check if database is configured
 $db_configured = false;
-if (file_exists('config/database.php')) {
+if (file_exists($baseDir . '/config/database.php')) {
     try {
-        require_once 'config/database.php';
+        require_once $baseDir . '/config/database.php';
         $db_configured = true;
     } catch (Exception $e) {
         $db_configured = false;
